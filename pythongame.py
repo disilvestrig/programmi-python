@@ -1,6 +1,8 @@
 print("RUBENTUS GAME")
 print("Obiettivo: ruba il tesoro e raggiungi l'arrivo;")
-print("Movimento(Nord=W;Sud=S;Est=A;West=D)")
+print("Movimento(Nord=W;Sud=S;Est=A;West=D;Esci dal gioco = Q)",
+	  ";appena verrà creato il livello ti troverai in una casella fuori dal gioco nella quale è impossibile rientrare e devi cliccare immediatamente il tasto s per essere", 
+	  "teletrasportato nel campo da gioco")
 import os
 level = 0
 tutorial = 0
@@ -39,7 +41,9 @@ while True:
   b = 0
   while True:
 
-    c = input(">>>")
+    c = input(">>> ").upper()
+    c.upper()
+
     if c == "W" and a[b-9]!=['M'] and b-9 >= 0:
     
       a[b] = [' ']
@@ -66,6 +70,8 @@ while True:
       b += 1
       a[b] = ['P']
       q += 1
+    elif c == "Q":
+      break
     for zlatan in range(level):
       randommover = random.randint(1,4)
       pos = posmonster[zlatan]
@@ -98,7 +104,7 @@ while True:
 
 
 
-    if a[73] == ['P']  and u == 0 :
+    if a[73] == ['P'] and u == 0 :
       randomizer = random.randint(0,81)
       while randomizer == 73 or a[randomizer]== ['M'] or randomizer == 0:
         randomizer = random.randint(0,81)
@@ -121,7 +127,7 @@ while True:
     print()
     print()
 
-    if a[b] == ["M"]:
+    if a[b] == ["M"] or c == "Q":
       break
     if a[73] == [' '] and a[randomizer] == ['P'] :
       print("Livello superato")
@@ -130,7 +136,7 @@ while True:
       break
   if level == 78:
     break
-  if a[b] == ['M']:
+  if a[b] == ['M'] or c == "Q":
     break
   
     
