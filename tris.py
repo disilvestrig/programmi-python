@@ -2,7 +2,6 @@
 
 import os
 import random
-from copy import deepcopy
 
 # variabili globali
 CPU = 1
