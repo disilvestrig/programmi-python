@@ -6,13 +6,6 @@ print("Obiettivo: ruba il tesoro e raggiungi l'arrivo")
 print("Movimento(Nord=W;Sud=S;Est=A;West=D;Esci dal gioco = Q)",
       ";appena verrà creato il livello ti troverai in una casella fuori dal gioco nella quale è impossibile rientrare e devi cliccare immediatamente il tasto s per essere", 
       "teletrasportato nel campo da gioco nella casella in alto a sinistra")
-os.system("say [Obiettivo : ruba il tesoro e raggiungi la casella arrivo evitando i mostri ]") 
-os.system("say [per dirigersi a Nord clicca il tasto W ]")
-os.system("say [per dirigersi a Sud clicca il tasto S ]")
-os.system("say [per dirigersi a Est clicca il tasto A ]")
-os.system("say [per dirigersi a Ovest clicca il tasto D ,mentre per uscire dal gioco premi Q ]")
-os.system("say [appena verrà creato il livello ti troverai nella casella base nella quale è impossibile rientrare]") 
-os.system("say [devi cliccare immediatamente il tasto s per essere teletrasportato nel campo da gioco]")
 
 
 level = 0
@@ -162,4 +155,4 @@ print("Riassunto")
 print("Livelli superati:",level)
 print("Punti totalizzati:",points)
 print("Mosse utilizzate:",q)
-os.system(" say [è stata una bella partita, torna a giocare il più presto possibile , saluti da parte degli sviluppatori Giulio Di Silvestri e Alessandro Negro]")
+
