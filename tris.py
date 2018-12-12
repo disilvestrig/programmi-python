@@ -114,7 +114,7 @@ def isFinished():
     return (emptyCells == 0)
     
 def checkForWinner(board):
-    """ Return the symbol of the winner """
+    """ Restituisce il simbolo del vincitore"""
     if checkWin(board, USER):
         return SYMBOLS[USER]
     elif checkWin(board, CPU):
@@ -125,7 +125,7 @@ def checkForWinner(board):
     return ''
     
 def checkWin(board, player):
-    """ Return True if the player is the winner, false otherwise """
+    """ Restituisce True se il vincitore è il player,altrimenti False """
     sym = SYMBOLS[player]
     if (board[0][0] == sym and board[0][1] == sym and board[0][2] == sym) or \
        (board[1][0] == sym and board[1][1] == sym and board[1][2] == sym) or \
