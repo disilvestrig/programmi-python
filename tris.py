@@ -70,22 +70,69 @@ def getMoveFrom(playerType):
             
         coord = {'x': row, 'y': col}
     else :
-        coord = calculatemove()
+        coord = IA()
     return coord
-    
-
-def calculatemove():
+def IA():
+    moves = []
     avalaibleCoords = getAllPossibleMove()
-    a = random.randint(0,2)
-    b = random.randint(0,2)
-    go = False
-    while go == False:
-        if [a,b] in avalaibleCoords:
-            go = True
-        else:
+    if BOARD[0][0] == BOARD[0][2] == SYMBOLS[0] and [0,1] in avalaibleCoords:
+        moves.append([0,1])
+    elif BOARD[0][0] == BOARD[2][0] == SYMBOLS[0] and [1,0] in avalaibleCoords:
+        moves.append([1,0])
+    elif BOARD[0][0] == BOARD[2][2] == SYMBOLS[0] and [1,1] in avalaibleCoords:
+        moves.append([1,1])
+    elif BOARD[0][1] == BOARD[2][1] == SYMBOLS[0] and [1,1] in avalaibleCoords:
+        moves.append([1,1])
+    elif BOARD[0][2] == BOARD[2][0] == SYMBOLS[0] and [1,1] in avalaibleCoords:
+        moves.append([1,2])
+    elif BOARD[0][2] == BOARD[2][2] == SYMBOLS[0] and [1,2] in avalaibleCoords:
+        moves.append([1,2])
+    elif BOARD[1][0] == BOARD[1][2] == SYMBOLS[0] and [1,1] in avalaibleCoords:
+        moves.append([1,1])
+    elif BOARD[2][2] == BOARD[2][0] == SYMBOLS[0] and [2,1] in avalaibleCoords:
+        moves.append([1,0])    
+    elif BOARD[0][0] == BOARD[0][1] == SYMBOLS[0] and [0,2] in avalaibleCoords:
+        moves.append([0,2])
+    elif BOARD[0][0] == BOARD[1][0] == SYMBOLS[0] and [2,0] in avalaibleCoords:
+        moves.append([2,0])
+    elif BOARD[0][0] == BOARD[1][1] == SYMBOLS[0] and [2,2] in avalaibleCoords:
+        moves.append([2,2])
+    elif BOARD[0][1] == BOARD[0][2] == SYMBOLS[0] and [0,0] in avalaibleCoords:
+        moves.append([0,0])
+    elif BOARD[0][1] == BOARD[1][1] == SYMBOLS[0] and [2,1] in avalaibleCoords:
+        moves.append([2,1])
+    elif BOARD[0][2] == BOARD[1][1] == SYMBOLS[0] and [2,0] in avalaibleCoords:
+        moves.append([2,0])
+    elif BOARD[0][2] == BOARD[1][2] == SYMBOLS[0] and [2,2] in avalaibleCoords:
+        moves.append([2,2])
+    elif BOARD[1][0] == BOARD[2][0] == SYMBOLS[0] and [0,0] in avalaibleCoords:
+        moves.append([0,0])
+    elif BOARD[1][0] == BOARD[1][1] == SYMBOLS[0] and [1,2] in avalaibleCoords:
+        moves.append([1,2])
+    elif BOARD[1][1] == BOARD[1][2] == SYMBOLS[0] and [1,0] in avalaibleCoords:
+        moves.append([1,0])
+    elif BOARD[1][1] == BOARD[2][0] == SYMBOLS[0] and [0,2] in avalaibleCoords:
+        moves.append([0,2])
+    elif BOARD[1][1] == BOARD[2][1] == SYMBOLS[0] and [0,1] in avalaibleCoords:
+        moves.append([0,1])
+    elif BOARD[1][1] == BOARD[2][2] == SYMBOLS[0] and [0,0] in avalaibleCoords:
+        moves.append([0,0])
+    elif BOARD[1][2] == BOARD[2][2] == SYMBOLS[0] and [0,2] in avalaibleCoords:
+        moves.append([0,2])
+    elif BOARD[2][0] == BOARD[2][1] == SYMBOLS[0] and [2,2] in avalaibleCoords:
+        moves.append([2,2])
+    elif BOARD[2][1] == BOARD[2][2] == SYMBOLS[0] and [2,0] in avalaibleCoords:
+        moves.append([2,0])
+    if len(moves) == 0:
+        a = random.randint(0,2)
+        b = random.randint(0,2)
+        while [a,b] not in avalaibleCoords:
             a = random.randint(0,2)
             b = random.randint(0,2)
-    coord = {"x": a,"y":b}
+        coord = {"x": a,"y":b}
+    else:
+        move = choice(moves)
+        coord = {"x":move[0],"y":move[1]}
     return coord
 
 
