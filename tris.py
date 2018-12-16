@@ -2,6 +2,7 @@
 
 import os
 import random
+from random import choice
 
 # variabili globali
 CPU = 1
