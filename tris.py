@@ -220,10 +220,10 @@ def gameLoop():
             else:
                 winner = "The CPU"
                 
-            print ("%s is the winner!" % winner) 
+            print ("%s è il vincitore!" % winner) 
             finished = True
         elif winner == '-':
-            print ("There's no winner!")
+            print ("Pareggio")
             finished = True
         else:
             setCellAt(getMoveFrom(curPlayer), SYMBOLS[curPlayer])
